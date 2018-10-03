@@ -1,0 +1,4 @@
+fractol
+.vscode/
+obj/
+libft/*.o
