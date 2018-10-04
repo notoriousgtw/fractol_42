@@ -1,4 +1,3 @@
 fractol
+*.o
 .vscode/
-obj/
-libft/*.o
