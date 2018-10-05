@@ -6,17 +6,12 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/30 14:36:16 by mhurd             #+#    #+#             */
-/*   Updated: 2018/10/03 18:17:41 by gwood            ###   ########.fr       */
+/*   Updated: 2018/10/04 14:13:31 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 #include <stdio.h>
-
-double	ft_lerp(double v0, double v1, double t)
-{
-	return ((1 - t) * v0 + t * v1);
-}
 
 void	ft_putpixel(t_data *d, int x, int y, t_color color)
 {

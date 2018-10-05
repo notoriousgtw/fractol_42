@@ -6,7 +6,7 @@
 #    By: gwood <gwood@42.us.org>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/30 14:30:20 by mhurd             #+#    #+#              #
-#    Updated: 2018/10/02 20:50:42 by gwood            ###   ########.fr        #
+#    Updated: 2018/10/04 13:49:33 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME	= fractol
 
 SRC		= main.c \
 		  mandelbrot.c \
-		  mandelbrot_hooks.c \
+		  mandelbrot_key_hooks.c \
+		  mandelbrot_mouse_hooks.c \
 		  utils.c \
 
 OBJ		= $(addprefix $(OBJDIR),$(SRC:.c=.o))
