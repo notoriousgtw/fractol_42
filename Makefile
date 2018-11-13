@@ -6,7 +6,7 @@
 #    By: gwood <gwood@42.us.org>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/30 14:30:20 by mhurd             #+#    #+#              #
-#    Updated: 2018/10/04 13:49:33 by gwood            ###   ########.fr        #
+#    Updated: 2018/11/12 20:49:46 by gwood            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME	= fractol
 
 SRC		= main.c \
 		  mandelbrot.c \
+		  mandelbrot_thread.c \
 		  mandelbrot_key_hooks.c \
 		  mandelbrot_mouse_hooks.c \
 		  utils.c \
@@ -27,7 +28,7 @@ LIBFT	= ./libft/libft.a
 LIBINC	= -I./libft/includes
 LIBLINK	= -L./libft -lft
 
-X11LINK = -L/usr/lib/x86_64-linux-gnu -lX11 -lXext -lm
+X11LINK = -L/usr/lib/x86_64-linux-gnu -lX11 -lXext -lm -pthread
 
 MLXINC  = -I/usr/local/include
 MLXLINK	= -L/usr/local/lib -lmlx

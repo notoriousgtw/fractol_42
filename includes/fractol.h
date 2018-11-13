@@ -6,7 +6,7 @@
 /*   By: gwood <gwood@42.us.org>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/08 16:06:16 by mhurd             #+#    #+#             */
-/*   Updated: 2018/10/03 18:19:26 by gwood            ###   ########.fr       */
+/*   Updated: 2018/11/12 22:39:34 by gwood            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include "mlx.h"
 # include "libft.h"
 # include "ft_color.h"
+# include <pthread.h>
 # include <string.h>
 # include <fcntl.h>
 # include <unistd.h>
@@ -22,6 +23,7 @@
 # include <errno.h>
 
 # define FRACTAL_COUNT 1
+# define THREAD_COUNT 9
 
 /*
 ** KEYS
@@ -49,20 +51,13 @@
 # define KEY_NP_MINUS  0xffad
 
 typedef int		(*t_fractal_fnc)(int argc, char **argv);
+typedef void	*(*t_thread_fnc)(void *data);
 
 typedef struct	s_fractal_prg
 {
 	char			*name;
 	t_fractal_fnc	draw;
 }				t_fractal_prg;
-
-typedef struct	s_fractal
-{
-	size_t		max_iter;
-	t_color		pallete;
-	int			pallete_length;
-	t_color		colormap;
-}				t_fractal;
 
 typedef struct	s_data
 {
@@ -75,7 +70,7 @@ typedef struct	s_data
 	int			ed;
 	int			width;
 	int			height;
-	void		*fractol;
+	void		*fractal;
 }				t_data;
 
 void	init_pallete(t_color p[16]);
